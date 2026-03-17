@@ -2,10 +2,10 @@ import os
 
 from fastapi import APIRouter, Depends
 
-from agentic.src.app.interfaces.schemas import Response
+from sandbox.app.interfaces.schemas.base import Response
 from sandbox.app.interfaces.errors.exceptions import BadRequestException
 from sandbox.app.interfaces.schemas.shell import ShellExecuteRequest, ShellWaitRequest, ShellKillRequest, \
-    ShellReadRequest
+    ShellReadRequest, ShellWriteRequest
 from sandbox.app.interfaces.service_dependencies import get_shell_service
 from sandbox.app.models.shell import ShellExecuteResult, ShellWaitResult, ShellWriteResult, ShellKillResult, \
     ShellReadResult

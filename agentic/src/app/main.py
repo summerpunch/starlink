@@ -2,19 +2,16 @@ import asyncio
 import logging
 from contextlib import asynccontextmanager
 
-from alembic import command
-from alembic.config import Config
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from src.app.core.config import get_settings
 from src.app.infrastructure.logging import setup_logging
 from src.app.infrastructure.storage.cos import get_cos
 from src.app.infrastructure.storage.postgres import get_postgres
 from src.app.infrastructure.storage.redis import get_redis
+from src.app.interfaces.endpoints.routes import router
 from src.app.interfaces.errors.exception_handlers import register_exception_handlers
 from src.app.interfaces.service_dependencies import get_agent_service
-from src.app.core.config import get_settings
-
-from src.app.interfaces.endpoints.app_config_routes import router
 
 # 1.加载配置信息
 settings = get_settings()

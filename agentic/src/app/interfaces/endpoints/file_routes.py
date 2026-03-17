@@ -3,7 +3,9 @@ import urllib.parse
 
 from fastapi import APIRouter, UploadFile, File, Depends
 from src.app.application.services.file_service import FileService
+from src.app.domain.models.file import File as FileInfo
 from src.app.interfaces.schemas import Response
+from src.app.interfaces.service_dependencies import get_file_service
 from starlette.responses import StreamingResponse
 
 logger = logging.getLogger(__name__)
