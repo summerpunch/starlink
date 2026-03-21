@@ -1,6 +1,8 @@
 import logging
 from typing import AsyncGenerator, Optional, Callable
 
+from src.app.domain.models.event import DoneEvent
+
 from .base import BaseFlow, FlowStatus
 from ..agents.planner import PlannerAgent
 from ..agents.react import ReActAgent
